@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="human"
+            type="com.hfad.dawrlygp.viewModel.HumanDialogViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:layout_margin="5dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"/>
+
+            <EditText
+                android:id="@+id/name_post_human"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginTop="3dp"
+                android:text="@={human.name}"
+                android:textColor="@android:color/darker_gray"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"/>
+
+            <EditText
+                android:id="@+id/age_post_human"
+                android:textColorHint="@color/grey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_marginTop="3dp"
+                android:text="@={human.age}"
+                android:textColor="@android:color/darker_gray"
+
+                />
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"/>
+
+            <RadioGroup
+                android:id="@+id/radioSexHuman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+
+                <RadioButton
+                    android:id="@+id/radioMaleHuman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:onClick="@{v->human.onRadioButtonClicked(v)}"
+
+                    />
+                <RadioButton
+                    android:id="@+id/radioFemaleHuman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    android:onClick="@{v->human.onRadioButtonClicked(v)}"
+
+                    />
+
+                <TextView
+                    android:id="@+id/error_gender"
+                    android:textColorHint="@color/grey"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:layout_marginTop="3dp"
+                    android:visibility="gone"
+                    android:textColor="@color/design_default_color_error"
+
+                    />
+
+            </RadioGroup>
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"/>
+
+
+            <EditText
+                android:id="@+id/desc_post_human"
+                android:textColorHint="@color/grey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginTop="3dp"
+                android:text="@={human.description}"
+                android:textColor="@android:color/darker_gray"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Location"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"/>
+
+            <EditText
+                    android:id="@+id/post_location_human"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={human.location}"
+                    android:hint="city , address"
+                    android:textColor="@android:color/darker_gray"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="When you lost or found her \\ him ?"
+                android:layout_marginTop="3dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="DD/MM/YYYY"
+                android:id="@+id/date"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginTop="3dp"
+                android:text="@={human.time}"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/human_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upload photo"
+                    android:layout_marginTop="5dp"/>
+                <TextView
+                    android:id="@+id/human_pp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={human.image}"
+                    />
+
+            </LinearLayout>
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add phone number in the post ?"/>
+            <RadioGroup
+                android:id="@+id/radioPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+
+                <RadioButton
+                    android:id="@+id/radioYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:onClick="@{v->human.onRadioButtonClickedPhoneNumber(v)}"
+
+                    />
+                <RadioButton
+                    android:id="@+id/radioNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:onClick="@{v->human.onRadioButtonClickedPhoneNumber(v)}"
+
+                    />
+
+                <TextView
+                    android:id="@+id/error_phone"
+                    android:textColorHint="@color/grey"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:layout_marginTop="3dp"
+                    android:visibility="gone"
+                    android:textColor="@color/design_default_color_error"
+
+                    />
+
+            </RadioGroup>
+
+
+            <FrameLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+                  <Button
+                      android:id="@+id/previous_"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text= "Previous"
+                      android:textColor="@color/colorAccent"
+                      android:background="@android:color/transparent"
+                      />
+
+                  <Button
+                      android:id="@+id/next"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Next"
+                      android:textColor="@color/colorAccent"
+                      android:onClick="@{(v)->human.onClickNext(v)}"
+                      android:layout_gravity="right"
+                      android:background="@android:color/transparent"
+                      />
+
+              </FrameLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</layout>

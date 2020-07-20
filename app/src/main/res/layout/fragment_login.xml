@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="LoginViewModel"
+            type="com.hfad.dawrlygp.viewModel.LoginViewModel" />
+    </data>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType = "centerCrop">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp">
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:layout_marginBottom="20dp"
+                    />
+                <TextView
+                    android:id="@+id/loginError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:textAlignment="center"
+                    android:textColor="@color/error"
+                    />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/grey"
+                    android:textColor="@android:color/white"
+                    >
+                    <EditText
+                        android:id="@+id/email_login"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorEnabled="true"
+                        android:inputType="textEmailAddress"
+                        android:hint="Email"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="@={LoginViewModel.email}"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    >
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:passwordToggleEnabled="true"
+                        android:textColorHint="@color/grey"
+                        android:textColor="@android:color/white"
+                        app:passwordToggleTint="@android:color/white"
+                        >
+                        <EditText
+                            android:id="@+id/password_login"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Password"
+                            android:inputType="textPassword"
+                            android:textColor="@android:color/white"
+                            android:text="@={LoginViewModel.password}"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Forget Password ?"
+                    android:id="@+id/forgetPassword"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginBottom="15dp"/>
+                <Button
+                    android:id="@+id/btLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/roundedbutton"
+                    android:text="Login"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:padding="@dimen/_10sdp"
+                    android:onClick="@{(v)->LoginViewModel.onClick(v)}"/>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center|bottom"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Not registered?"
+                        android:textAlignment="center"
+                        android:textColor="@color/quantum_white_100"
+                        />
+
+                    <TextView
+                        android:id="@+id/btCreateAccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Create an account"
+                        android:textColor="@color/darkPurple"
+                        />
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+</layout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/found"
+        android:title="Add to founds"
+        />
+    <item
+        android:id="@+id/delete_my_posts"
+        android:title="Delete"
+       />
+
+    <item
+        android:id="@+id/edit"
+        android:title="Edit post"
+        />
+</menu>

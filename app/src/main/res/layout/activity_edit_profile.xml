@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="EditProfileViewModel"
+            type="com.hfad.dawrlygp.viewModel.EditProfileViewModel" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeEdit">
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="vertical">
+               <androidx.appcompat.widget.Toolbar
+                   android:id="@+id/edit_profile_toolbar"
+                   android:layout_width="match_parent"
+                   android:layout_height="?android:attr/actionBarSize"
+                   android:background="@color/grey"
+                   />
+
+               <ScrollView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:id="@+id/scrollT">
+                   <LinearLayout
+                       android:orientation="vertical"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       >
+
+
+                       <RelativeLayout
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content">
+
+                           <ImageView
+                               android:id="@+id/ProfilePic"
+                               android:layout_marginTop="5dp"
+                               android:layout_marginLeft="10dp"
+                               android:layout_width="100dp"
+                               android:layout_height="100dp"
+                               />
+
+                           <ImageButton
+                               android:id="@+id/change_pp"
+                               android:background="@drawable/camera_icon"
+                               android:layout_width="30dp"
+                               android:layout_height="30dp"
+                               android:layout_marginTop="75dp"
+                               android:layout_marginLeft="80dp"
+                               android:onClick="changeProfilePicture"/>
+                       </RelativeLayout>
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="Full name"
+                           android:textColor="@android:color/white"
+                           android:layout_marginTop="5dp"
+                           android:layout_marginLeft="10dp"
+                           android:layout_marginRight="10dp"/>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="5dp"
+                           android:layout_marginLeft="10dp"
+                           android:layout_marginRight="10dp">
+                           <EditText
+                               android:id="@+id/firstNameProfile"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:inputType="text"
+                               android:hint="First name"
+                               android:textColor="@android:color/darker_gray"
+                               android:layout_weight="1"
+                               android:layout_marginRight="2dp"
+                               android:text="@={EditProfileViewModel.fname}"
+                               />
+
+                           <EditText
+                               android:id="@+id/lastNameProfile"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:inputType="text"
+                               android:hint="Last name"
+                               android:textColor="@android:color/darker_gray"
+                               android:layout_weight="1"
+                               android:layout_marginLeft="2dp"
+                               android:text="@={EditProfileViewModel.lname}"
+                               />
+
+
+                       </LinearLayout>
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="Birth date"
+                           android:textColor="@android:color/white"
+                           android:layout_marginTop="5dp"
+                           android:layout_marginLeft="10dp"
+                           android:layout_marginRight="10dp"/>
+
+                       <EditText
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:inputType="phone"
+                           android:hint="DD/MM/YYYY"
+                           android:id="@+id/birth_date_profile"
+                           android:textColor="@android:color/darker_gray"
+                           android:layout_marginTop="5dp"
+                           android:layout_marginLeft="10dp"
+                           android:layout_marginRight="10dp"
+                           android:text="@={EditProfileViewModel.birthdate}"
+                           />
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="Gender"
+                           android:textColor="@android:color/white"
+                           android:layout_marginTop="5dp"
+                           android:layout_marginLeft="10dp"
+                           android:layout_marginRight="10dp"/>
+
+                       <RadioGroup
+                           android:id="@+id/radioSexProfile"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal"
+                           android:layout_marginTop="5dp"
+                           android:layout_marginLeft="10dp"
+                           android:layout_marginRight="10dp"
+                           >
+
+                           <RadioButton
+                               android:id="@+id/radioMaleProfile"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="Male"
+                               android:layout_weight="1"
+                               android:layout_marginRight="20dp"
+                               android:onClick="@{(v)->EditProfileViewModel.onRadioCheck(v)}"/>
+
+                           <RadioButton
+                               android:id="@+id/radioFemaleProfile"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="Female"
+                               android:layout_weight="1"
+                               android:onClick=
+                                   "@{(v)->EditProfileViewModel.onRadioCheck(v)}"/>
+
+                       </RadioGroup>
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="Location"
+                           android:textColor="@android:color/white"
+                           android:layout_marginTop="5dp"
+                           android:layout_marginLeft="10dp"
+                           android:layout_marginRight="10dp"/>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="5dp"
+                           android:layout_marginLeft="10dp"
+                           android:layout_marginRight="10dp"
+                           android:orientation="horizontal">
+
+
+                           <Button
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="Location"
+                               android:id="@+id/location_profile"
+                               />
+
+                           <ScrollView
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent">
+                               <TextView
+                                   android:id="@+id/location_details"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:textSize="10dp"
+                                   />
+
+                           </ScrollView>
+
+                       </LinearLayout>
+
+                       <Button
+                           android:id="@+id/savebtn"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginTop="10dp"
+                           android:background="@drawable/roundedbutton2"
+                           android:onClick="@{(v)->EditProfileViewModel.Onclick(v)}"
+                           android:text="Save"
+                           android:textAllCaps="false"
+                           android:textColor="@android:color/white"
+
+                           />
+
+
+                   </LinearLayout>
+
+               </ScrollView>
+               <ProgressBar
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/progressbar_edit2"
+                   android:layout_gravity="center"
+                   android:layout_marginTop="10dp"
+                   android:visibility="gone"/>
+
+           </LinearLayout>
+           <ProgressBar
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/progressbar_edit"
+               android:layout_gravity="center"
+               android:layout_marginTop="10dp"
+               android:visibility="gone"/>
+       </FrameLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

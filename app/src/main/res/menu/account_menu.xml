@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/editProfile"
+            android:title="Edit Profile"
+            android:icon="@drawable/ic_account_circle_black_24dp"/>
+        <item
+            android:id="@+id/changemail"
+            android:title="Change E-mail"
+            android:icon="@drawable/mail"
+          />
+        <item
+            android:id="@+id/chnagepassword"
+            android:title="Change Password"
+            android:icon="@drawable/lock"/>
+
+        <item
+            android:id="@+id/savedmenu"
+            android:title="Saved"
+            android:icon="@drawable/saved"/>
+
+        <item
+            android:id="@+id/logout"
+            android:title="Logout" />
+
+    </group>
+
+</menu>

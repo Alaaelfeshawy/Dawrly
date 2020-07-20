@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "335294487803",
+    "firebase_url": "https://dawrly-12bd7.firebaseio.com",
+    "project_id": "dawrly-12bd7",
+    "storage_bucket": "dawrly-12bd7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335294487803:android:e281b00c7c00185fef645e",
+        "android_client_info": {
+          "package_name": "com.hfad.dawrlygp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335294487803-po1c0fdqkdnnfuohq2lrlvnkpl2t11ph.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hfad.dawrlygp",
+            "certificate_hash": "b62a0597fd7ba3d1a054b975a6b7228a82a830ce"
+          }
+        },
+        {
+          "client_id": "335294487803-h2t962glhe2t7l0uefo7n3krkenlae9n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNLFmPa_8_BxItHLzpupwUtkfcmIOgXNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335294487803-h2t962glhe2t7l0uefo7n3krkenlae9n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

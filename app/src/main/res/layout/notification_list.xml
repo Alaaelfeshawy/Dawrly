@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="posts"
+            type="com.hfad.dawrlygp.model.Posts" />
+    </data>
+    <androidx.cardview.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:id="@+id/cardViewNotification">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="3dp">
+
+                <ImageView
+                    android:id="@+id/image_notification_list"
+                    android:layout_height="50dp"
+                    android:layout_width="50dp"
+                    />
+                <TextView
+                    android:id="@+id/first_name_notification_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="@android:color/white"/>
+                <TextView
+                    android:id="@+id/last_name_notification_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@android:color/white"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/notificationIconInNotify"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center|end"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/notify"
+                />
+
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                android:layout_gravity="bottom"/>
+        </FrameLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

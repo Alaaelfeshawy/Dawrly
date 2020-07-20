@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/home"
+        android:title="@string/title_home"
+        android:color="#FFFFFF"
+        android:tint="#FFFFFF"
+        android:backgroundTint="#FFFFFF"        />
+
+    <item
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/search"
+        android:title="@string/title_search"
+        android:color="#FFFFFF"
+        android:tint="#FFFFFF"
+        android:backgroundTint="#FFFFFF"        />
+
+    <item
+        android:id="@+id/navigation_chat"
+        android:icon="@drawable/chat1"
+        android:title="@string/title_chat"
+        android:color="#FFFFFF"
+        android:tint="#FFFFFF"
+        android:backgroundTint="#FFFFFF"        />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/notification"
+        android:title="@string/title_notifications"
+        android:color="#FFFFFF"
+        android:tint="#FFFFFF"
+        android:backgroundTint="#FFFFFF"        />
+    <item
+        android:id="@+id/navigation_myAccount"
+        android:icon="@drawable/account"
+        android:title="@string/title_account"
+        android:color="#FFFFFF"
+        android:tint="#FFFFFF"
+        android:backgroundTint="#FFFFFF"        />
+
+</menu>

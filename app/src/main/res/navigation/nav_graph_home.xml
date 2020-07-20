@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_hme"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.hfad.dawrlygp.views.Fragments.UserFragment.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.hfad.dawrlygp.views.Fragments.UserFragment.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.hfad.dawrlygp.views.Fragments.UserFragment.ChatFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.hfad.dawrlygp.views.Fragments.UserFragment.NotificationFragment"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.hfad.dawrlygp.views.Fragments.UserFragment.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_account" />
+
+</navigation>

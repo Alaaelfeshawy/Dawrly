@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_nav"
+    app:startDestination="@id/adminHomeFragment">
+
+
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="com.hfad.dawrlygp.views.Fragments.AdminFragment.AdminHomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_admin_home" />
+    <fragment
+        android:id="@+id/requestsFragment"
+        android:name="com.hfad.dawrlygp.views.Fragments.AdminFragment.RequestsFragment"
+        android:label="Requests"
+        tools:layout="@layout/fragment_requests" />
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.hfad.dawrlygp.views.Fragments.AdminFragment.ReportFragment"
+        android:label="Reports"
+        tools:layout="@layout/fragment_report" />
+</navigation>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="edit"
+            type="com.hfad.dawrlygp.viewModel.EditPostViewModel" />
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/editPostToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/grey" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/nameBrandNameTitleEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Title"/>
+                <EditText
+                    android:id="@+id/nameBrandNameEditPost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={edit.nameBrandName}"
+                    />
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/ageModelNameTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Age"/>
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/ageModelNameEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={edit.ageModelName}"/>
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/genderColorTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gender"/>
+
+                <RadioGroup
+                    android:visibility="gone"
+                    android:id="@+id/radioSexProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/radioMaleProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Male"
+                        android:layout_weight="1"
+                        android:layout_marginRight="20dp"
+                        android:onClick="@{(v)->edit.onSexCheck(v)}"/>
+
+                    <RadioButton
+                        android:id="@+id/radioFemaleProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Female"
+                        android:layout_weight="1"
+                        android:onClick=
+                            "@{(v)->edit.onSexCheck(v)}"/>
+
+                </RadioGroup>
+
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/genderColorEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={edit.colorValue}"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Location"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/loctationEdit"
+                    android:text="@={edit.location}"
+                    />
+                <TextView
+                    android:id="@+id/descTitleEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description"/>
+                <EditText
+                    android:id="@+id/desc_edit_post"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={edit.desc}"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dateEditPost"
+                    android:text="@={edit.date}"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Type"/>
+                <RadioGroup
+                    android:id="@+id/radioTypeProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/radioFoundCheck"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Found"
+                        android:layout_weight="1"
+                        android:layout_marginRight="20dp"
+                        android:onClick="@{(v)->edit.onTypeCheck(v)}"/>
+
+                    <RadioButton
+                        android:id="@+id/radioLostCheck"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lost"
+                        android:layout_weight="1"
+                        android:onClick="@{(v)->edit.onTypeCheck(v)}"/>
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Change Image"
+                        android:textAllCaps="false"
+                        android:id="@+id/uploadImage"/>
+                    <ImageView
+                        android:id="@+id/image_edit_post"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"/>
+                </LinearLayout>
+                <Button
+                    android:id="@+id/save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/roundedbutton2"
+                    android:text="Save"
+                    android:textColor="@android:color/white"
+                    android:onClick="@{(v)->edit.Onclick(v)}"
+                    android:layout_margin="10dp"
+                    android:enabled="false"
+
+
+                    />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

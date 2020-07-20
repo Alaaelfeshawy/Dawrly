@@ -1,0 +1,69 @@
+<layout>
+    <data>
+        <variable
+            name="AllViewModel"
+            type="com.hfad.dawrlygp.viewModel.AllViewModel" />
+    </data>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/coordinator_layout"
+        tools:context=".views.Home">
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/swipeHome">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:scrollbars="vertical"
+                    android:paddingBottom="?android:attr/actionBarSize"
+                    />
+            </LinearLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBarHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatbutton"
+                android:layout_marginBottom="60dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:src="@drawable/pen"
+                android:background="@drawable/fab"
+                app:fabSize="normal"
+                app:backgroundTint="@color/warn"
+                app:rippleColor="@android:color/black"
+                app:borderWidth="0dp"
+                app:elevation="2dp"
+                app:pressedTranslationZ="12dp"/>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
